@@ -1,0 +1,14 @@
+Ejecutar Deteccion en Tiempo Real
+python detect.py --weights runs/train/yolov7-ok5/weights/best.pt --conf 0.25 --source 0
+
+Ejecutar Deteccion de Video
+python detect.py --weights runs/train/yolov7-retrain3/weights/best.pt --conf 0.25 --source videos/Componentes.mp4
+
+Ejecutar Entrenamiento
+python train.py --weights runs/train/yolov7-ok5/weights/best.pt --cfg cfg/training/yolov7.yaml --data data/Componentes.yaml --hyp data/hyp.scratch.custom.yaml --epochs 30 --batch-size 8 --device 0 --workers 8 --name yolov7-retrain --img 640 640
+
+Ejecutar Imagenes
+python detect.py --weights runs/train/yolov7-retrain3/weights/best.pt --conf 0.5 --source imagenes_test --view-img
+
+Activar Entorno Virtual
+yolov7-env/Scripts/activate
